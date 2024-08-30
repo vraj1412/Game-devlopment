@@ -1,2 +1,0 @@
-
-    char destination[20];
