@@ -1,13 +1,12 @@
 #include<iostream>
 using namespace std;
-class BattingAvg{
-    int bcode , ining , notout , run , bating_avg;
+    int bcode , ining , notout , run ;
+    float bating_avg;
     char bname[20];
-    
-    
-    void avg();
 
+class Take_data{
     public :
+
 
         void take_data(){
             cout <<"Enter Batsman Code = ";
@@ -21,10 +20,26 @@ class BattingAvg{
             cout <<"Enter How Many Runs Hit By Player = ";
             cin >> run;
 
-            avg();
+           
         }
-        void show_data(){
-            cout << " Batsman Code :"<<bcode<<endl;
+       
+};
+class avg{
+    public:
+
+    void avrage(){
+        bating_avg = run / (ining - notout);
+        cout << endl;
+    }
+};
+
+class Set_data : public Take_data , public avg{
+    public:
+   
+     void show_data(){
+        take_data();
+        avrage();
+            cout << "Batsman Code :"<<bcode<<endl;
             cout << "Batsman Name : "<<bname<<endl;
             cout << "inning Played by Player : "<<ining<<endl;
             cout << "Player Notout = "<<notout<<endl;
@@ -34,14 +49,12 @@ class BattingAvg{
         }
 };
 
-void BattingAvg :: avg(){
-        bating_avg = run / (ining - notout);
-        cout << endl;
-};
-int main(){
-    BattingAvg b;
 
-    b.take_data();
+int main(){
+    Set_data b;
+
+  
+   
     b.show_data();
 
 }
