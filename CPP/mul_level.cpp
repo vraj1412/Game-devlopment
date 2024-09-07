@@ -5,8 +5,6 @@ using namespace std;
 
 class Take_data{
     public :
-
-
         void take_data(){
             cout <<"Enter Batsman Code = ";
             cin >> bcode;
@@ -17,22 +15,20 @@ class Take_data{
             cout <<"Enter How Many Time Player Notout = ";
             cin >> notout;
             cout <<"Enter How Many Runs Hit By Player = ";
-            cin >> run;
-
-           
+            cin >> run; 
         }
        
 };
-class avg{
+class avg :public Take_data{
     public:
-
+    
     void avrage(){
         bating_avg = run / (ining - notout);
         cout << endl;
     }
 };
 
-class Set_data : public Take_data , public avg{
+class Set_data :  public avg{
     public:
    
      void show_data(){
