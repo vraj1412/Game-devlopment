@@ -112,12 +112,12 @@ public:
 
           cout << "================ Customer Details ================" << endl;
 
-          cout << "Enter Customer Name:";
+          cout << "Enter Your Sweet Name :";
           cin >> name;
 
      again:
 
-          cout << "Enter Customer Mobile Number[10 digit only]:";
+          cout << "Enter Your Mobile Number :";
           cin >> number;
 
           d = 0;
@@ -136,17 +136,17 @@ public:
      void order()
      {
 
-          cout << "Enter your choice : ";
+          cout << "Enter Your Order Number Please : ";
           cin >> choice;
-          if (choice == 0)
+          if (choice <= 0 || choice >= 25)
           {
-               cout << "valid number";
+               cout << "Invalid number!! Please Enter Valid Number." << endl;
           }
           else
           {
 
                a[z] = choice;
-               cout << "Enter quantity :";
+               cout << "Enter Quantity :";
                cin >> qty;
 
                b[z] = qty;
@@ -158,14 +158,15 @@ public:
      {
           z--;
           int n, f = 0, t = 0;
-          cout << "-----------------------------------------------------------------" << endl;
-          cout << "                         maharaja hotal                          " << endl;
-          cout << "-----------------------------------------------------------------" << endl;
+          cout << "---------------------------------------------------------------------------------" << endl;
+          cout << "                                    Vraj's Hotel                                 " << endl;
+          cout << "                            Gujrat's One of The Best Hotel                       " << endl;
+          cout << "---------------------------------------------------------------------------------" << endl;
           cout << "   NAME   :" << name << endl;
           cout << "   NUMBER :" << number << endl;
-          cout << "-----------------------------------------------------------------" << endl;
-          cout << "-----------------------------------------------------------------" << endl;
-          cout << " NO\t\tITEM\t\t      QTY\t\tPRICE\t\tTOTAL\t\t" << endl;
+          cout << "---------------------------------------------------------------------------------" << endl;
+          cout << "---------------------------------------------------------------------------------" << endl;
+          cout << "NO\t\tITEM\t\t      QTY\t\tPRICE\t\tTOTAL\t\t" << endl;
           for (int j = 0; j <= z; j++)
           {
 
@@ -176,22 +177,22 @@ public:
 
                total = p[n] * f;
 
-               cout  << j + 1 <<"           ";
+               cout << j + 1 << "           ";
 
-               cout <<"   "<< i[n] << "\t\t" << f << "\t\t" << p[n] << "\t\t" << total << endl;
-               t = f*p[n];
+               cout << "   " << i[n] << "\t\t" << f << "\t\t" << p[n] << "\t\t" << total << endl;
+               t = f * p[n];
 
-          tot = tot + t;
-          gst = tot * 0.18;
-          net_total = tot + gst;
+               tot = tot + t;
+               gst = (tot * 18) / 100;
+               net_total = tot + gst;
           }
-          
-          cout << "-----------------------------------------------------------------" << endl;
-          cout << "|total bill:                                            " << tot << endl;
-          cout << "|gst:                                                   " << gst << endl;
-          cout << "-----------------------------------------------------------------" << endl;
-          cout << "|after gst add bill:                                    " << net_total << endl;
-          cout << "-----------------------------------------------------------------" << endl;
+
+          cout << "---------------------------------------------------------------------------------" << endl;
+          cout << " Total :                                                                " << tot << endl;
+          cout << " Gst :                                                                  " << gst << endl;
+          cout << "---------------------------------------------------------------------------------" << endl;
+          cout << " Net bill :                                                   " << net_total << endl;
+          cout << "---------------------------------------------------------------------------------" << endl;
      }
 };
 int main()
@@ -228,12 +229,12 @@ int main()
                     s1.bill();
                     break;
                case 0:
-                    cout << "--------------------------------" << endl;
-                    cout << "       Thank you for visit      " << endl;
-                    cout << "--------------------------------" << endl;
+                    cout << "-----------------------------------------------------------------" << endl;
+                    cout << "                       Thank you for visit                       " << endl;
+                    cout << "-----------------------------------------------------------------" << endl;
                     return 0;
                default:
-                    cout << "|   enter valid number   |" << endl;
+                    cout << "   enter valid number   " << endl;
                }
           }
      } while (ac != 0);
