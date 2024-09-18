@@ -35,7 +35,7 @@ Box add(Box a, Box b)
 int main()
 {
     Box a, b, c, d;
-    a.setData(2,2,2);
+    a.setData(2,9,1);
     b.setData(5,5,5);
 
     cout<<"Volume of A is: "<<a.getVolume()<<endl;
