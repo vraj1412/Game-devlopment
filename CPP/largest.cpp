@@ -4,6 +4,13 @@ using namespace std;
 class Number{
     public:
         int num1, num2;
+        get_data(){
+            cout<<"Enter Number 1 :";
+            cin>>num1;
+            cout<<"Enter Number 2 :";
+            cin>>num2;
+        
+        }
 
     friend int findBiggest(Number n);
 };
@@ -21,8 +28,7 @@ int findBiggest(Number n){
 
 int main(){
     Number n;
-    n.num1 = 10;
-    n.num2 = 20;
+    n.get_data();
     
     int biggest = findBiggest(n);
     cout << "The biggest number is: " << biggest << endl;
