@@ -5,7 +5,7 @@ class hotel
 
 public:
      int p[50], d, choice, a[25], b[25], z = 0, qty, total, gst, net_total, tot = 0;
-     string i[1000], name, number;
+     string i[100], name, number;
      hotel()
      {
           i[0] = "Manchurian     ";
